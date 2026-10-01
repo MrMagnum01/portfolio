@@ -1,351 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelance Portfolio</title>
-    <style>
-        :root {
-            --color-bg: #ffffff;
-            --color-text: #1a1a1a;
-            --color-border: #e0e0e0;
-            --color-link: #0066cc;
-            --color-link-hover: #0052a3;
-            --color-card-bg: #f9f9f9;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) {
-                --color-bg: #1a1a1a;
-                --color-text: #ffffff;
-                --color-border: #404040;
-                --color-link: #66b3ff;
-                --color-link-hover: #99ccff;
-                --color-card-bg: #2d2d2d;
-            }
-        }
-
-        :root[data-theme="dark"] {
-            --color-bg: #1a1a1a;
-            --color-text: #ffffff;
-            --color-border: #404040;
-            --color-link: #66b3ff;
-            --color-link-hover: #99ccff;
-            --color-card-bg: #2d2d2d;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            padding: 16px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 48px;
-            padding: 32px 0;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            color: var(--color-text);
-            opacity: 0.8;
-            margin-bottom: 16px;
-        }
-
-        .portfolio {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-bottom: 48px;
-        }
-
-        .card {
-            background-color: var(--color-card-bg);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-image {
-            width: 100%;
-            height: auto;              /* whole 4:3 cover, never cropped (Astra site review group 3) */
-            aspect-ratio: 4 / 3;
-            object-fit: contain;
-            display: block;
-        }
-
-        .card-content {
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .card-title {
-            font-size: 1.25em;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-
-        .card-description {
-            font-size: 0.95em;
-            color: var(--color-text);
-            opacity: 0.85;
-            margin-bottom: 12px;
-            flex-grow: 1;
-        }
-
-        .card-disclosure {
-            font-size: 0.85em;
-            color: var(--color-text);
-            opacity: 0.7;
-            margin-bottom: 12px;
-            font-style: italic;
-        }
-
-        .card-link {
-            color: var(--color-link);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-            display: inline-block;
-        }
-
-        .card-link:hover {
-            color: var(--color-link-hover);
-            text-decoration: underline;
-        }
-
-        .card-status {
-            color: var(--color-text);
-            opacity: 0.6;
-            font-weight: 500;
-            display: inline-block;
-            font-size: 0.95em;
-        }
-
-        footer {
-            text-align: center;
-            padding: 32px 16px;
-            color: var(--color-text);
-            opacity: 0.7;
-            font-size: 0.9em;
-            border-top: 1px solid var(--color-border);
-        }
-
-        @media (max-width: 640px) {
-            body {
-                padding: 16px;
-            }
-
-            header {
-                margin-bottom: 32px;
-                padding: 16px 0;
-            }
-
-            h1 {
-                font-size: 1.5em;
-            }
-
-            .portfolio {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            .card-content {
-                padding: 12px;
-            }
-
-            .card-image {
-                height: auto;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio: automation, reports and data tools (synthetic demonstrations)</title>
+  <meta name="description" content="Synthetic demonstrations of automation, report and data tools, with source links and measured limits.">
+  <link rel="preload" href="fonts/manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Freelance Portfolio</h1>
-            <p class="subtitle">Synthetic demos, independently reviewed</p>
-        </header>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="grid">
+      <p class="wordmark">Freelance Portfolio</p>
+      <nav aria-label="Sections">
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#index">Index</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#provenance">Provenance</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <div class="portfolio">
-    <div class="card">
-      <img src="covers/01-sales-report.png" alt="Daily sales report from a CSV export" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Daily sales report from a CSV export</h2>
-        <p class="card-description">Turns a daily e-commerce orders CSV (local file) into a validated HTML sales report plus an exception report that counts malformed rows by category — scheduled, retried, with a controlled failure alert in the demo. Deduplicates per order line, keeps revenue split by currency, and never guesses at bad rows.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/csv-daily-sales-report" class="card-link">View on GitHub</a>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-t">
+      <div class="grid">
+        <h1 id="hero-t">Less repetition.<br> More useful work.</h1>
+        <p class="lede">Automation, reports and data tools. Explore synthetic demonstrations, with source and measured limits.</p>
+        <nav class="hero-index" aria-label="Selected work">
+          <p class="kicker">Selected work</p>
+          <ol><li><a href="#work-04"><span class="num">04</span> Revenue reconciliation</a></li><li><a href="#work-05"><span class="num">05</span> Excel consolidation</a></li><li><a href="#work-13"><span class="num">13</span> Local document Q&amp;A</a></li><li><a href="#index">All 16 projects <span class="arrow" aria-hidden="true">↓</span></a></li></ol>
+        </nav>
       </div>
-    </div>
-    <div class="card">
-      <img src="covers/02-low-stock.png" alt="Low-stock alerts from inventory + sales history CSVs" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Low-stock alerts from inventory + sales history CSVs</h2>
-        <p class="card-description">Reads inventory and sales-history CSVs (local files), computes reorder points from historical sales averages plus safety stock, and produces a daily low-stock report plus a weekly units-sold trend chart. Refuses to trust a LOW/OK verdict until it has full lookback-window coverage.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/inventory-low-stock-alerts" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/03-pdf-invoices.png" alt="Structured data extraction from PDF invoices to CSV" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Structured data extraction from PDF invoices to CSV</h2>
-        <p class="card-description">Extracts invoice number, date, vendor, currency, line items, subtotal, tax and total from text-based PDF invoices. Tested on 31 synthetic PDFs in 3 visual layouts sharing the same English field labels and ruled line-item tables, in 3 currencies. Flags checks into a separate exceptions file instead of guessing: missing field, missing or unreadable line items, duplicate invoice number, subtotal or total mismatch, and PDFs with no extractable text. No OCR.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/pdf-invoice-to-csv" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/04-revenue-reconciliation.png" alt="Revenue reconciliation from API and CSV data" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Revenue reconciliation from API and CSV data</h2>
-        <p class="card-description">Reconciles a local mock orders API with payments and refunds CSVs in DuckDB. Reports per-currency KPIs in integer cents and categorised mismatches. Multiple payments per order are flagged, not proven duplicate charges. Incomplete sources are labelled; missing-record conclusions are withheld. No live vendor integration.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/revenue-reconciliation" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/05-excel-consolidation.png" alt="Excel consolidation into a validated master workbook" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Excel consolidation into a validated master workbook</h2>
-        <p class="card-description">Consolidates synthetic regional workbooks using supported header aliases and date formats. Preserves each row&#x27;s currency without FX conversion. Produces a master workbook, rejection reasons and transformation log. The sample reconciles 500 input rows to 403 accepted, 70 rejected and 27 duplicates. Ambiguous sheets and corrupt files are reported.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/excel-consolidation" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/06-kpi-dashboard.png" alt="Streamlit KPI dashboard over reconciled revenue data" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Streamlit KPI dashboard over reconciled revenue data</h2>
-        <p class="card-description">A local Streamlit dashboard over a fixed DuckDB snapshot: per-currency KPIs, trend charts and a paginated mismatch table with CSV export. Displays the stored run-completeness status and validates the database schema. Tests compare KPIs to the same-run database totals; this is a consistency check, not independent validation of source data.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/kpi-dashboard-streamlit" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/07-email-orders.png" alt="Order-confirmation emails to CSV and SQLite" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Order-confirmation emails to CSV and SQLite</h2>
-        <p class="card-description">Parses 13 synthetic emails from four fictional shops: 8 orders and 5 exceptions. Supports the demonstrated MIME/PDF variants using one shared item-line format. IMAP is tested against a local mock server, not a real mailbox. Duplicate detection is per shop and per run.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/email-orders-to-table" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/08-receipt-ocr.png" alt="Receipt OCR with a confidence-based review queue" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Receipt OCR with a confidence-based review queue</h2>
-        <p class="card-description">Extracts receipt fields with Tesseract and routes low-confidence or ambiguous results for review. On 60 synthetic receipts, 35 were accepted and 25 flagged; all 35 matched the scored shop/date/total/currency/item-count fields. This is not real-receipt accuracy. Output files are individually replaced and hash-checked through a manifest, not one atomic transaction.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/receipt-ocr-review-queue" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/09-n8n-lead-workflow.png" alt="n8n lead workflow with retries and outcome reconciliation" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">n8n lead workflow with retries and outcome reconciliation</h2>
-        <p class="card-description">A webhook workflow validates synthetic leads and calls local mock enrichment, CRM and alert services. Uses idempotency keys and bounded retries. Reconciles ambiguous CRM writes by key: confirmed success, confirmed absence, or outcome unknown. Recording and notification failures remain visible. Harness accounting separates accepted, rejected, dead-lettered and unknown events.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/n8n-lead-workflow" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/10-plant-shift-oee.png" alt="Synthetic MQTT telemetry to an OEE shift report" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Synthetic MQTT telemetry to an OEE shift report</h2>
-        <p class="card-description">Processes synthetic MQTT state, count, alarm and heartbeat events for a fictional line. Produces OEE, downtime and alarm reports. Withholds OEE when the documented coverage/state checks fail; a 600-second gap tolerance is not continuous observation. HTML and JSON publish atomically per file, not together. No employer data or real plant-performance claim.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/plant-shift-oee-report" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/11-team-dashboard.png" alt="Team Excel dashboard from validated local submissions" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Team Excel dashboard from validated local submissions</h2>
-        <p class="card-description">Team workbooks feed validated CSVs and refreshed KPI workbooks: overdue tasks, blockers, achievements and trends. A local folder stands in for SharePoint; no tenant integration or connected Power Query workbook is demonstrated. Sync rolls back ordinary exceptions and coordinates readers; hard-kill recovery can require manual repair.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/excel-team-dashboard" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/12-incremental-api-sync.png" alt="Full API snapshot sync with incremental destination writes" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Full API snapshot sync with incremental destination writes</h2>
-        <p class="card-description">Rescans a local mock API&#x27;s full snapshot and applies versioned, idempotent destination writes. Tracks pagination coverage, unresolved outcomes and checkpoints. A real process-kill test covers the SQLite destination/checkpoint boundary; it does not prove crash-atomic source snapshot publication. No real vendor connector, OAuth or source-side delta fetching.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/incremental-api-sync" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/13-local-document-qa.png" alt="Local document Q&amp;A with citations and measured limitations" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Local document Q&amp;A with citations and measured limitations</h2>
-        <p class="card-description">Retrieves passages from 12 synthetic documents and answers with local models. On 40 retained questions: all-source retrieval 29/32, multi-document retrieval 8/8, corrected rule-scored answer agreement 16/32. Abstained on 5/8 unanswerable questions, missing 3. These are bounded automated scores, not human validation. Tested injection/conflict guards are not universal protection.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/local-document-qa" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/14-authorised-extraction.png" alt="Authorised local catalogue extraction and change tracking" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Authorised local catalogue extraction and change tracking</h2>
-        <p class="card-description">Extracts products from an owned loopback catalogue under an explicit permission grant, separate robots checks and a fixed scope. Supports two demonstrated page templates and CSV/XLSX exports. Reconciles advertised counts; incomplete crawls cannot establish removals. Complete snapshots produce added/removed/price-change reports. No real-site or authenticated scraping demonstrated.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/authorised-catalogue-extraction" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-content">
-        <h2 class="card-title">Tabular demand forecast with a frozen evaluation protocol</h2>
-        <p class="card-description">Compares a pre-declared gradient-boosting grid with three fixed baselines under a frozen synthetic evaluation. On the retained test, GBM has lower MAE than seasonal-naive in every reported stratum, but loses to naive-last-week on the unseen store&#x27;s shifted SKUs and has the largest negative bias. These are descriptive results on this synthetic set, not evidence of real-world forecasting performance.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/tabular-demand-forecast" class="card-link">View on GitHub</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="covers/15-digital-twin-line.png" alt="Digital-twin line: frozen-protocol, one-shot evaluation harness" class="card-image">
-      <div class="card-content">
-        <h2 class="card-title">Digital-twin line: frozen-protocol, one-shot evaluation harness</h2>
-        <p class="card-description">A synthetic digital-twin evaluation workflow with frozen splits, validation-selected thresholds and one retained locked test. Isolation Forest did not improve on always-alert and was active for about 99.9% of eligible operating time. The static rule detected more seen-asset events at substantially more false alerts. Nine events per stratum demonstrate the evaluation workflow, not a useful detector or real-world performance.</p>
-        <p class="card-disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
-        <a href="https://github.com/MrMagnum01/digital-twin-line" class="card-link">View on GitHub</a>
-      </div>
-    </div>
+      <div class="hero-band">
+        <div class="grid">
+          <figure class="hero-shot">
+            <picture><source type="image/avif" srcset="img/04-revenue-reconciliation-480.avif 480w, img/04-revenue-reconciliation-800.avif 800w, img/04-revenue-reconciliation-1200.avif 1200w" sizes="100vw"><img class="shot" src="img/04-revenue-reconciliation-800.webp" srcset="img/04-revenue-reconciliation-480.webp 480w, img/04-revenue-reconciliation-800.webp 800w, img/04-revenue-reconciliation-1200.webp 1200w" sizes="100vw" width="1600" height="1200" alt="Revenue reconciliation, project 04: a labelled preview of actual output from the synthetic run." fetchpriority="high" decoding="async"></picture>
+            <figcaption>Synthetic demonstration · styled actual-output preview</figcaption>
+          </figure>
         </div>
+      </div>
+    </section>
 
-        <footer>
-            <p>All demonstrations use synthetic data. Built with AI coding agents and reviewed independently.</p>
-        </footer>
+    <section class="work" id="work" aria-labelledby="work-h">
+      <div class="grid">
+        <h2 id="work-h" class="section-h">Selected work <em class="serif">with measured limits</em></h2>
+      </div>
+      <div class="grid features">
+      <article class="feature media-left" id="work-04" aria-labelledby="work-04-t">
+        <div class="feature-media"><figure class="frame"><div class="frame-bar"><span class="frame-label">04 · cover, synthetic data</span></div><div class="frame-body"><picture><source type="image/avif" srcset="img/04-revenue-reconciliation-480.avif 480w, img/04-revenue-reconciliation-800.avif 800w, img/04-revenue-reconciliation-1200.avif 1200w" sizes="(min-width: 1024px) 58vw, (min-width: 768px) 92vw, 100vw"><img class="shot" src="img/04-revenue-reconciliation-800.webp" srcset="img/04-revenue-reconciliation-480.webp 480w, img/04-revenue-reconciliation-800.webp 800w, img/04-revenue-reconciliation-1200.webp 1200w" sizes="(min-width: 1024px) 58vw, (min-width: 768px) 92vw, 100vw" width="1600" height="1200" alt="Cover for Revenue reconciliation from API and CSV data: a labelled preview of actual output from the synthetic run." loading="lazy" decoding="async"></picture></div></figure></div>
+        <div class="feature-text">
+          <p class="num">04</p>
+          <h3 id="work-04-t">Revenue reconciliation from API and CSV data</h3>
+          <p class="io"><span class="io-k">Input</span> Local mock orders API, payments and refunds CSVs <span class="arrow" aria-hidden="true">→</span><span class="visually-hidden">; </span> <span class="io-k">Output</span> per-currency KPIs in integer cents and categorised mismatches</p>
+          <p class="figure"><span class="io-k">Measured</span> 24 mismatch findings from 130 synthetic orders, 122 payments and 14 refunds (seed 42)</p>
+          <p class="limit"><span class="io-k">Limits</span> Multiple payments per order are flagged, not proven duplicate charges. Incomplete sources are labelled; missing-record conclusions are withheld. No live vendor integration.</p>
+          <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          <p><a class="evidence" href="https://github.com/MrMagnum01/revenue-reconciliation">Source on GitHub<span class="visually-hidden">: Revenue reconciliation from API and CSV data</span> <span aria-hidden="true">→</span></a></p>
+        </div>
+      </article>
+      <article class="feature media-right" id="work-05" aria-labelledby="work-05-t">
+        <div class="feature-media"><figure class="frame"><div class="frame-bar"><span class="frame-label">05 · cover, synthetic data</span></div><div class="frame-body"><picture><source type="image/avif" srcset="img/05-excel-consolidation-480.avif 480w, img/05-excel-consolidation-800.avif 800w, img/05-excel-consolidation-1200.avif 1200w" sizes="(min-width: 1024px) 58vw, (min-width: 768px) 92vw, 100vw"><img class="shot" src="img/05-excel-consolidation-800.webp" srcset="img/05-excel-consolidation-480.webp 480w, img/05-excel-consolidation-800.webp 800w, img/05-excel-consolidation-1200.webp 1200w" sizes="(min-width: 1024px) 58vw, (min-width: 768px) 92vw, 100vw" width="1600" height="1200" alt="Cover for Excel consolidation into a validated master workbook: a labelled preview of actual output from the synthetic run." loading="lazy" decoding="async"></picture></div></figure></div>
+        <div class="feature-text">
+          <p class="num">05</p>
+          <h3 id="work-05-t">Excel consolidation into a validated master workbook</h3>
+          <p class="io"><span class="io-k">Input</span> Synthetic regional workbooks <span class="arrow" aria-hidden="true">→</span><span class="visually-hidden">; </span> <span class="io-k">Output</span> a master workbook, rejection reasons and a transformation log</p>
+          <p class="figure"><span class="io-k">Measured</span> 500 input rows reconciled to 403 accepted, 70 rejected and 27 duplicates</p>
+          <p class="limit"><span class="io-k">Limits</span> Supported header aliases and date formats only. Each row keeps its currency; no FX conversion. Ambiguous sheets and corrupt files are reported.</p>
+          <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          <p><a class="evidence" href="https://github.com/MrMagnum01/excel-consolidation">Source on GitHub<span class="visually-hidden">: Excel consolidation into a validated master workbook</span> <span aria-hidden="true">→</span></a></p>
+        </div>
+      </article>
+      <article class="feature media-left" id="work-13" aria-labelledby="work-13-t">
+        <div class="feature-media"><figure class="frame"><div class="frame-bar"><span class="frame-label">13 · cover, synthetic data</span></div><div class="frame-body"><picture><source type="image/avif" srcset="img/13-local-document-qa-480.avif 480w, img/13-local-document-qa-800.avif 800w, img/13-local-document-qa-1200.avif 1200w" sizes="(min-width: 1024px) 58vw, (min-width: 768px) 92vw, 100vw"><img class="shot" src="img/13-local-document-qa-800.webp" srcset="img/13-local-document-qa-480.webp 480w, img/13-local-document-qa-800.webp 800w, img/13-local-document-qa-1200.webp 1200w" sizes="(min-width: 1024px) 58vw, (min-width: 768px) 92vw, 100vw" width="1600" height="1200" alt="Cover for Local document Q&amp;A with citations and measured limitations: a labelled preview of actual output from the synthetic run." loading="lazy" decoding="async"></picture></div></figure></div>
+        <div class="feature-text">
+          <p class="num">13</p>
+          <h3 id="work-13-t">Local document Q&amp;A with citations and measured limitations</h3>
+          <p class="io"><span class="io-k">Input</span> 12 synthetic documents and a question <span class="arrow" aria-hidden="true">→</span><span class="visually-hidden">; </span> <span class="io-k">Output</span> an answer from local models with retrieved passages, or an abstention</p>
+          <p class="figure"><span class="io-k">Measured</span> All-source retrieval 29/32 and corrected rule-scored answer agreement 16/32, on 40 retained questions</p>
+          <p class="limit"><span class="io-k">Limits</span> Bounded automated scores, not human validation. Abstained on 5/8 unanswerable questions, missing 3. Tested injection/conflict guards are not universal protection.</p>
+          <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          <p><a class="evidence" href="https://github.com/MrMagnum01/local-document-qa">Source on GitHub<span class="visually-hidden">: Local document Q&amp;A with citations and measured limitations</span> <span aria-hidden="true">→</span></a></p>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="index" id="index" aria-labelledby="index-h">
+      <div class="grid">
+        <h2 id="index-h" class="section-h">Full project index <em class="serif">16 demonstrations</em></h2>
+        <ol class="entries">
+        <li class="entry" id="p-01">
+          <p class="num">01</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/01-sales-report-480.avif 480w, img/01-sales-report-800.avif 800w, img/01-sales-report-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/01-sales-report-800.webp" srcset="img/01-sales-report-480.webp 480w, img/01-sales-report-800.webp 800w, img/01-sales-report-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Daily sales report from a CSV export." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Daily sales report from a CSV export</h3>
+            <p>Turns a daily e-commerce orders CSV (local file) into a validated HTML sales report plus an exception report that counts malformed rows by category — scheduled, retried, with a controlled failure alert in the demo. Deduplicates per order line, keeps revenue split by currency, and never guesses at bad rows.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/csv-daily-sales-report">Source on GitHub<span class="visually-hidden">: Daily sales report from a CSV export</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-02">
+          <p class="num">02</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/02-low-stock-480.avif 480w, img/02-low-stock-800.avif 800w, img/02-low-stock-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/02-low-stock-800.webp" srcset="img/02-low-stock-480.webp 480w, img/02-low-stock-800.webp 800w, img/02-low-stock-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Low-stock alerts from inventory + sales history CSVs." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Low-stock alerts from inventory + sales history CSVs</h3>
+            <p>Reads inventory and sales-history CSVs (local files), computes reorder points from historical sales averages plus safety stock, and produces a daily low-stock report plus a weekly units-sold trend chart. Refuses to trust a LOW/OK verdict until it has full lookback-window coverage.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/inventory-low-stock-alerts">Source on GitHub<span class="visually-hidden">: Low-stock alerts from inventory + sales history CSVs</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-03">
+          <p class="num">03</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/03-pdf-invoices-480.avif 480w, img/03-pdf-invoices-800.avif 800w, img/03-pdf-invoices-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/03-pdf-invoices-800.webp" srcset="img/03-pdf-invoices-480.webp 480w, img/03-pdf-invoices-800.webp 800w, img/03-pdf-invoices-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Structured data extraction from PDF invoices to CSV." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Structured data extraction from PDF invoices to CSV</h3>
+            <p>Extracts invoice number, date, vendor, currency, line items, subtotal, tax and total from text-based PDF invoices. Tested on 31 synthetic PDFs in 3 visual layouts sharing the same English field labels and ruled line-item tables, in 3 currencies. Flags checks into a separate exceptions file instead of guessing: missing field, missing or unreadable line items, duplicate invoice number, subtotal or total mismatch, and PDFs with no extractable text. No OCR.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/pdf-invoice-to-csv">Source on GitHub<span class="visually-hidden">: Structured data extraction from PDF invoices to CSV</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-04">
+          <p class="num">04</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/04-revenue-reconciliation-480.avif 480w, img/04-revenue-reconciliation-800.avif 800w, img/04-revenue-reconciliation-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/04-revenue-reconciliation-800.webp" srcset="img/04-revenue-reconciliation-480.webp 480w, img/04-revenue-reconciliation-800.webp 800w, img/04-revenue-reconciliation-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Revenue reconciliation from API and CSV data." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Revenue reconciliation from API and CSV data</h3>
+            <p>Reconciles a local mock orders API with payments and refunds CSVs in DuckDB. Reports per-currency KPIs in integer cents and categorised mismatches. Multiple payments per order are flagged, not proven duplicate charges. Incomplete sources are labelled; missing-record conclusions are withheld. No live vendor integration.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/revenue-reconciliation">Source on GitHub<span class="visually-hidden">: Revenue reconciliation from API and CSV data</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-05">
+          <p class="num">05</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/05-excel-consolidation-480.avif 480w, img/05-excel-consolidation-800.avif 800w, img/05-excel-consolidation-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/05-excel-consolidation-800.webp" srcset="img/05-excel-consolidation-480.webp 480w, img/05-excel-consolidation-800.webp 800w, img/05-excel-consolidation-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Excel consolidation into a validated master workbook." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Excel consolidation into a validated master workbook</h3>
+            <p>Consolidates synthetic regional workbooks using supported header aliases and date formats. Preserves each row&#x27;s currency without FX conversion. Produces a master workbook, rejection reasons and transformation log. The sample reconciles 500 input rows to 403 accepted, 70 rejected and 27 duplicates. Ambiguous sheets and corrupt files are reported.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/excel-consolidation">Source on GitHub<span class="visually-hidden">: Excel consolidation into a validated master workbook</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-06">
+          <p class="num">06</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/06-kpi-dashboard-480.avif 480w, img/06-kpi-dashboard-800.avif 800w, img/06-kpi-dashboard-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/06-kpi-dashboard-800.webp" srcset="img/06-kpi-dashboard-480.webp 480w, img/06-kpi-dashboard-800.webp 800w, img/06-kpi-dashboard-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Streamlit KPI dashboard over reconciled revenue data." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Streamlit KPI dashboard over reconciled revenue data</h3>
+            <p>A local Streamlit dashboard over a fixed DuckDB snapshot: per-currency KPIs, trend charts and a paginated mismatch table with CSV export. Displays the stored run-completeness status and validates the database schema. Tests compare KPIs to the same-run database totals; this is a consistency check, not independent validation of source data.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/kpi-dashboard-streamlit">Source on GitHub<span class="visually-hidden">: Streamlit KPI dashboard over reconciled revenue data</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-07">
+          <p class="num">07</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/07-email-orders-480.avif 480w, img/07-email-orders-800.avif 800w, img/07-email-orders-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/07-email-orders-800.webp" srcset="img/07-email-orders-480.webp 480w, img/07-email-orders-800.webp 800w, img/07-email-orders-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Order-confirmation emails to CSV and SQLite." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Order-confirmation emails to CSV and SQLite</h3>
+            <p>Parses 13 synthetic emails from four fictional shops: 8 orders and 5 exceptions. Supports the demonstrated MIME/PDF variants using one shared item-line format. IMAP is tested against a local mock server, not a real mailbox. Duplicate detection is per shop and per run.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/email-orders-to-table">Source on GitHub<span class="visually-hidden">: Order-confirmation emails to CSV and SQLite</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-08">
+          <p class="num">08</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/08-receipt-ocr-480.avif 480w, img/08-receipt-ocr-800.avif 800w, img/08-receipt-ocr-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/08-receipt-ocr-800.webp" srcset="img/08-receipt-ocr-480.webp 480w, img/08-receipt-ocr-800.webp 800w, img/08-receipt-ocr-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Receipt OCR with a confidence-based review queue." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Receipt OCR with a confidence-based review queue</h3>
+            <p>Extracts receipt fields with Tesseract and routes low-confidence or ambiguous results for review. On 60 synthetic receipts, 35 were accepted and 25 flagged; all 35 matched the scored shop/date/total/currency/item-count fields. This is not real-receipt accuracy. Output files are individually replaced and hash-checked through a manifest, not one atomic transaction.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/receipt-ocr-review-queue">Source on GitHub<span class="visually-hidden">: Receipt OCR with a confidence-based review queue</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-09">
+          <p class="num">09</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/09-n8n-lead-workflow-480.avif 480w, img/09-n8n-lead-workflow-800.avif 800w, img/09-n8n-lead-workflow-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/09-n8n-lead-workflow-800.webp" srcset="img/09-n8n-lead-workflow-480.webp 480w, img/09-n8n-lead-workflow-800.webp 800w, img/09-n8n-lead-workflow-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for n8n lead workflow with retries and outcome reconciliation." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>n8n lead workflow with retries and outcome reconciliation</h3>
+            <p>A webhook workflow validates synthetic leads and calls local mock enrichment, CRM and alert services. Uses idempotency keys and bounded retries. Reconciles ambiguous CRM writes by key: confirmed success, confirmed absence, or outcome unknown. Recording and notification failures remain visible. Harness accounting separates accepted, rejected, dead-lettered and unknown events.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/n8n-lead-workflow">Source on GitHub<span class="visually-hidden">: n8n lead workflow with retries and outcome reconciliation</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-10">
+          <p class="num">10</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/10-plant-shift-oee-480.avif 480w, img/10-plant-shift-oee-800.avif 800w, img/10-plant-shift-oee-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/10-plant-shift-oee-800.webp" srcset="img/10-plant-shift-oee-480.webp 480w, img/10-plant-shift-oee-800.webp 800w, img/10-plant-shift-oee-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Synthetic MQTT telemetry to an OEE shift report." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Synthetic MQTT telemetry to an OEE shift report</h3>
+            <p>Processes synthetic MQTT state, count, alarm and heartbeat events for a fictional line. Produces OEE, downtime and alarm reports. Withholds OEE when the documented coverage/state checks fail; a 600-second gap tolerance is not continuous observation. HTML and JSON publish atomically per file, not together. No employer data or real plant-performance claim.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/plant-shift-oee-report">Source on GitHub<span class="visually-hidden">: Synthetic MQTT telemetry to an OEE shift report</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-11">
+          <p class="num">11</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/11-team-dashboard-480.avif 480w, img/11-team-dashboard-800.avif 800w, img/11-team-dashboard-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/11-team-dashboard-800.webp" srcset="img/11-team-dashboard-480.webp 480w, img/11-team-dashboard-800.webp 800w, img/11-team-dashboard-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Team Excel dashboard from validated local submissions." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Team Excel dashboard from validated local submissions</h3>
+            <p>Team workbooks feed validated CSVs and refreshed KPI workbooks: overdue tasks, blockers, achievements and trends. A local folder stands in for SharePoint; no tenant integration or connected Power Query workbook is demonstrated. Sync rolls back ordinary exceptions and coordinates readers; hard-kill recovery can require manual repair.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/excel-team-dashboard">Source on GitHub<span class="visually-hidden">: Team Excel dashboard from validated local submissions</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-12">
+          <p class="num">12</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/12-incremental-api-sync-480.avif 480w, img/12-incremental-api-sync-800.avif 800w, img/12-incremental-api-sync-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/12-incremental-api-sync-800.webp" srcset="img/12-incremental-api-sync-480.webp 480w, img/12-incremental-api-sync-800.webp 800w, img/12-incremental-api-sync-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Full API snapshot sync with incremental destination writes." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Full API snapshot sync with incremental destination writes</h3>
+            <p>Rescans a local mock API&#x27;s full snapshot and applies versioned, idempotent destination writes. Tracks pagination coverage, unresolved outcomes and checkpoints. A real process-kill test covers the SQLite destination/checkpoint boundary; it does not prove crash-atomic source snapshot publication. No real vendor connector, OAuth or source-side delta fetching.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/incremental-api-sync">Source on GitHub<span class="visually-hidden">: Full API snapshot sync with incremental destination writes</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-13">
+          <p class="num">13</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/13-local-document-qa-480.avif 480w, img/13-local-document-qa-800.avif 800w, img/13-local-document-qa-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/13-local-document-qa-800.webp" srcset="img/13-local-document-qa-480.webp 480w, img/13-local-document-qa-800.webp 800w, img/13-local-document-qa-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Local document Q&amp;A with citations and measured limitations." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Local document Q&amp;A with citations and measured limitations</h3>
+            <p>Retrieves passages from 12 synthetic documents and answers with local models. On 40 retained questions: all-source retrieval 29/32, multi-document retrieval 8/8, corrected rule-scored answer agreement 16/32. Abstained on 5/8 unanswerable questions, missing 3. These are bounded automated scores, not human validation. Tested injection/conflict guards are not universal protection.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/local-document-qa">Source on GitHub<span class="visually-hidden">: Local document Q&amp;A with citations and measured limitations</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-14">
+          <p class="num">14</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/14-authorised-extraction-480.avif 480w, img/14-authorised-extraction-800.avif 800w, img/14-authorised-extraction-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/14-authorised-extraction-800.webp" srcset="img/14-authorised-extraction-480.webp 480w, img/14-authorised-extraction-800.webp 800w, img/14-authorised-extraction-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Authorised local catalogue extraction and change tracking." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Authorised local catalogue extraction and change tracking</h3>
+            <p>Extracts products from an owned loopback catalogue under an explicit permission grant, separate robots checks and a fixed scope. Supports two demonstrated page templates and CSV/XLSX exports. Reconciles advertised counts; incomplete crawls cannot establish removals. Complete snapshots produce added/removed/price-change reports. No real-site or authenticated scraping demonstrated.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/authorised-catalogue-extraction">Source on GitHub<span class="visually-hidden">: Authorised local catalogue extraction and change tracking</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry text-led" id="p-15">
+          <p class="num">15</p>
+          
+          <div class="entry-text">
+            <h3>Tabular demand forecast with a frozen evaluation protocol</h3>
+            <p>Compares a pre-declared gradient-boosting grid with three fixed baselines under a frozen synthetic evaluation. On the retained test, GBM has lower MAE than seasonal-naive in every reported stratum, but loses to naive-last-week on the unseen store&#x27;s shifted SKUs and has the largest negative bias. These are descriptive results on this synthetic set, not evidence of real-world forecasting performance.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/tabular-demand-forecast">Source on GitHub<span class="visually-hidden">: Tabular demand forecast with a frozen evaluation protocol</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="entry" id="p-16">
+          <p class="num">16</p>
+          <div class="entry-media"><picture><source type="image/avif" srcset="img/15-digital-twin-line-480.avif 480w, img/15-digital-twin-line-800.avif 800w, img/15-digital-twin-line-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw"><img class="thumb" src="img/15-digital-twin-line-800.webp" srcset="img/15-digital-twin-line-480.webp 480w, img/15-digital-twin-line-800.webp 800w, img/15-digital-twin-line-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 30vw, 100vw" width="1600" height="1200" alt="Cover for Digital-twin line: frozen-protocol, one-shot evaluation harness." loading="lazy" decoding="async"></picture></div>
+          <div class="entry-text">
+            <h3>Digital-twin line: frozen-protocol, one-shot evaluation harness</h3>
+            <p>A synthetic digital-twin evaluation workflow with frozen splits, validation-selected thresholds and one retained locked test. Isolation Forest did not improve on always-alert and was active for about 99.9% of eligible operating time. The static rule detected more seen-asset events at substantially more false alerts. Nine events per stratum demonstrate the evaluation workflow, not a useful detector or real-world performance.</p>
+            <p class="disclosure">Synthetic portfolio demonstration, implemented with AI coding agents and independently reviewed by a separate AI reviewer. No client data or client work.</p>
+          </div>
+          <p class="entry-link"><a class="evidence" href="https://github.com/MrMagnum01/digital-twin-line">Source on GitHub<span class="visually-hidden">: Digital-twin line: frozen-protocol, one-shot evaluation harness</span> <span aria-hidden="true">→</span></a></p>
+        </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="process" id="process" aria-labelledby="process-h">
+      <div class="grid">
+        <h2 id="process-h" class="section-h">How a scoped engagement works <em class="serif">in writing first</em></h2>
+        <ol class="steps">
+          <li><h3><span class="num">1</span> Scope</h3><p>Fixed price, with scope agreed in writing before work starts. One clarifying question first if anything is ambiguous.</p></li>
+          <li><h3><span class="num">2</span> Build</h3><p>Read-only against your systems: no writing back to production data and no control of a live process.</p></li>
+          <li><h3><span class="num">3</span> Handover</h3><p>For report automation, delivery includes validation rules, an exception report for bad data, retry and duplicate handling, failure alerts, a short runbook and a handover walkthrough.</p></li>
+        </ol>
+        <p class="note">Pre-contract communication stays on Upwork.</p>
+      </div>
+    </section>
+
+    <section class="provenance" id="provenance" aria-labelledby="prov-h">
+      <div class="grid">
+        <h2 id="prov-h" class="section-h">Provenance and limitations <em class="serif">what this is, and is not</em></h2>
+        <ul class="facts">
+          <li>Every demonstration uses synthetic data. No client data or client work.</li>
+          <li>Implemented with AI coding agents and independently reviewed by a separate AI reviewer.</li>
+          <li>Figures are measured on the synthetic sets named beside them. They are not real-world accuracy or performance claims.</li>
+          <li>Covers show actual output from the synthetic runs; most are labelled styled previews rather than screenshots.</li>
+          <li>Repository links are evidence: each points to that demonstration's source. No live demo is hosted from this page.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="grid">
+      <p>All demonstrations use synthetic data. Built with AI coding agents and reviewed independently.</p>
+      <p>Type: Manrope and Instrument Serif, self-hosted under the SIL Open Font License 1.1
+        (<a href="fonts/Manrope-OFL.txt">Manrope licence</a>, <a href="fonts/InstrumentSerif-OFL.txt">Instrument Serif licence</a>).</p>
     </div>
+  </footer>
 </body>
 </html>
